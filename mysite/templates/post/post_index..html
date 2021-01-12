@@ -1,0 +1,11 @@
+<h1> from post index page</h1>
+
+{% if post %}
+	{% for p in post %}
+		<a href="{% url 'postdetail' p.id %}">{{p.title}}</a>
+		<br>
+	{% endfor %}
+{% else %}
+<p>No posts available</p>
+{% endif %}
+

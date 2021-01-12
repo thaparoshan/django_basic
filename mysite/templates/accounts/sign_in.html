@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    <title>Login</title>
+    body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+<!--/* Full-width input fields */-->
+input[type=text], input[type=password], input[type=email] {
+  width: 30%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus  {
+  background-color: #ddd;
+  outline: none;
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+form div {
+clear: left;
+margin: 0;
+padding: 0;
+padding-top: 7px;
+}
+form div label {
+float: left;
+width: 40%;
+font: bold 0.9em Arial, Helvetica, sans-serif;
+}
+fieldset {
+border: 2px dotted #61B5CF;
+margin-top: 1.4em;
+padding: 0.6em;
+width: 90%;
+}
+legend {
+font: bold 0.8em Arial, Helvetica, sans-serif;
+color: #00008B;
+background-color: #FFFFFF;
+}
+</style>
+</head>
+<body>
+<center>
+    <h1>Sign In</h1><br>
+    <fieldset>
+<form action="sign_in" method="post">
+    {% csrf_token %}
+    <div><input type="text" name="username" placeholder="username" class="txt"> </div> <br>
+    <div><input type="password" name="password" placeholder="password" class="txt"> </div><br>
+    <div><input type="Submit" class="btn"></div>
+
+</form>
+    </fieldset>
+</center>
+<div>
+
+    {% for message in messages %}
+    <h3> {{message}} </h3>
+    {% endfor %}
+</div>
+</body>
+</html>

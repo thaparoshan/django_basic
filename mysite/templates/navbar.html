@@ -1,0 +1,54 @@
+{% comment %} <h1>Hello Django</h1> {% endcomment %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">COMPANY</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item {{ home_page }}">
+        <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item {{ about_page }}">
+          <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item {{ contact_page }}">
+          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+        
+
+        <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+         &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+         <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        
+       User Login</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {% if user.is_authenticated %}
+            <li>Hello, {{user.first_name}}</li>
+           <li><a class="dropdown-item" href="accounts/logout">Logout</a></li> 
+             {% else %}
+          <li><a class="dropdown-item" href="accounts/sign_in">Sign In</a></li>
+          <li><a class="dropdown-item" href="accounts/sign_up">Sign Up</a></li>
+          <li><hr class="dropdown-divider"></li>
+          {% endif %}
+          </ul>
+        </li>
+  </ul>
+</div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
